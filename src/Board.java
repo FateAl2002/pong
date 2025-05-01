@@ -13,6 +13,7 @@ import static utils.Constants.*;
 
 public class Board extends JPanel implements ActionListener, KeyListener {
 
+    private final Ball ball;
     private final Player player;
     private final List<Sprite> sprites;
     private final Set<Integer> activeKeyCodes;
@@ -22,9 +23,8 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         setBackground(Color.GRAY);
 
         player = new Player();
-        Wall wall = new Wall(BOARD_WIDTH / 2 - WALL_WIDTH / 2,
-                BOARD_HEIGHT / 2 - WALL_WIDTH / 2);
-        sprites = new ArrayList<>(List.of(player, wall));
+        ball = new Ball();
+        sprites = new ArrayList<>(List.of(ball));
 
         activeKeyCodes = new HashSet<>();
 
