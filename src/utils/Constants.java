@@ -25,5 +25,5 @@ public final class Constants {
     public static final String BALL_IMAGE_PATH = "resources/ball.png";
     public static final int BALL_WIDTH = 80;
     public static final int BALL_HEIGHT = 80;
-    public static final int BALL_SPEED = 10;
+    public static final int BALL_SPEED = 1;
 }
