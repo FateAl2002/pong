@@ -34,4 +34,11 @@ public class Ball extends Sprite {
         pos.y = Math.clamp(pos.y, 0, BOARD_HEIGHT - BALL_HEIGHT);
     }
 
+    public void bounceRight() {
+        vx = Math.abs(vx) * 1.1;
+    }
+
+    public void bounceLeft() {
+        vy = Math.abs(vy) * 1.1;
+    }
 }

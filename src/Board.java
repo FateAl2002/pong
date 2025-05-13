@@ -15,6 +15,8 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
     private final Ball ball;
     private final Player player;
+    private final Paddle2 paddle2;
+    private final Paddle1 paddle1;
     private final List<Sprite> sprites;
     private final Set<Integer> activeKeyCodes;
 
@@ -24,7 +26,9 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
         player = new Player();
         ball = new Ball();
-        sprites = new ArrayList<>(List.of(ball));
+        paddle1 = new Paddle1();
+        paddle2 = new Paddle2();
+        sprites = new ArrayList<>(List.of(ball, paddle1, paddle2));
 
         activeKeyCodes = new HashSet<>();
 
