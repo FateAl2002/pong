@@ -14,7 +14,6 @@ import static utils.Constants.*;
 public class Board extends JPanel implements ActionListener, KeyListener {
 
     private final Ball ball;
-    private final Player player;
     private final Paddle2 paddle2;
     private final Paddle1 paddle1;
     private final List<Sprite> sprites;
@@ -24,7 +23,6 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
         setBackground(Color.GRAY);
 
-        player = new Player();
         ball = new Ball();
         paddle1 = new Paddle1();
         paddle2 = new Paddle2();
@@ -37,17 +35,19 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        player.handleActiveKeys(activeKeyCodes);
+        paddle1.handleActiveKeys(activeKeyCodes);
+        paddle2.handleActiveKeys(activeKeyCodes);
 
         for(Sprite sprite : sprites) {
             sprite.tick();
         }
 
-        for(Sprite sprite : sprites) {
-            if(player.isColliding(sprite)) {
-                player.handleCollision(sprite);
-            }
+        if (ball.isColliding(paddle1)) {
+            ball.bounceRight();
+        } else if (ball.isColliding(paddle2)) {
+            ball.bounceLeft();
         }
+
 
         repaint();
     }

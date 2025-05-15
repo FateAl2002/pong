@@ -17,7 +17,7 @@ public class Ball extends Sprite {
 
     private void resetBall() {
         pos.x =  BOARD_WIDTH / 2 - BALL_WIDTH / 2;
-        pos.y = BOARD_HEIGHT / 2 - BALL_WIDTH / 2;
+        pos.y = BOARD_HEIGHT / 2 - BALL_HEIGHT / 2;
 
         vx = BALL_SPEED;
         vy = BALL_SPEED;
@@ -31,7 +31,10 @@ public class Ball extends Sprite {
         pos.translate((int)vx, (int)vy);
 
         pos.x = Math.clamp(pos.x, 0, BOARD_WIDTH - BALL_WIDTH);
-        pos.y = Math.clamp(pos.y, 0, BOARD_HEIGHT - BALL_HEIGHT);
+
+        if (pos.y <= 0 || pos.y >= BOARD_HEIGHT - BALL_HEIGHT) {
+            vy = -vy;
+        }
     }
 
     public void bounceRight() {
