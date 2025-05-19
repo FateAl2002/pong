@@ -9,8 +9,13 @@ public class Paddle2 extends Sprite {
     private int downKey;
 
     public Paddle2() {
-        super(PADDLE2_IMAGE_PATH, WIDTH, HIGHT , PADDLE2_HEIGHT);
+        super(PADDLE2_IMAGE_PATH, BOARD_WIDTH - PADDLE2_WIDTH, BOARD_HEIGHT / 2 - PADDLE2_HEIGHT / 2, PADDLE2_WIDTH, PADDLE2_HEIGHT);
+        resetPaddle2();
+    }
 
+    private void resetPaddle2() {
+        pos.x =  BOARD_WIDTH - PADDLE2_WIDTH;
+        pos.y = BOARD_HEIGHT / 2 - PADDLE2_HEIGHT / 2;
     }
 
     @Override
