@@ -8,7 +8,7 @@ import static utils.Constants.*;
 public class Ball extends Sprite {
     private double vx;
     private double vy;
-    private Random random = new Random();
+    private Random random;
 
     public Ball() {
         super(BALL_IMAGE_PATH, 0, 0, BALL_WIDTH, BALL_HEIGHT);
@@ -21,8 +21,18 @@ public class Ball extends Sprite {
 
         vx = BALL_SPEED;
         vy = BALL_SPEED;
-        Random random1 = random;
-
+        Random random = new Random();
+        int randNum = random.nextInt(4);
+        if (randNum == 0) {
+            vx = BALL_SPEED;
+            vy = -BALL_SPEED;
+        } else if (randNum == 1) {
+            vx = -BALL_SPEED;
+            vy = BALL_SPEED;
+        } else if (randNum == 2) {
+            vx = -BALL_SPEED;
+            vy = BALL_SPEED;
+        } else
 
     }
 
