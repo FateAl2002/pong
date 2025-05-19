@@ -32,7 +32,10 @@ public class Ball extends Sprite {
         } else if (randNum == 2) {
             vx = -BALL_SPEED;
             vy = BALL_SPEED;
-        } else
+        } else {
+            vx = BALL_SPEED;
+            vy = -BALL_SPEED;
+        }
 
     }
 
