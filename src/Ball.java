@@ -55,6 +55,6 @@ public class Ball extends Sprite {
     }
 
     public void bounceLeft() {
-        vy = Math.abs(vy) * 1.1;
+        vx = -Math.abs(vx) * 1.1;
     }
 }

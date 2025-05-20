@@ -14,8 +14,8 @@ import static utils.Constants.*;
 public class Board extends JPanel implements ActionListener, KeyListener {
 
     private final Ball ball;
-    private final Paddle2 paddle2;
-    private final Paddle1 paddle1;
+    private final Paddle paddle1;
+    private final Paddle paddle2;
     private final List<Sprite> sprites;
     private final Set<Integer> activeKeyCodes;
 
@@ -24,8 +24,8 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         setBackground(Color.GRAY);
 
         ball = new Ball();
-        paddle1 = new Paddle1();
-        paddle2 = new Paddle2();
+        paddle1 = new Paddle(0, KeyEvent.VK_W, KeyEvent.VK_S);
+        paddle2 = new Paddle(BOARD_WIDTH - PADDLE_WIDTH, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
         sprites = new ArrayList<>(List.of(ball, paddle1, paddle2));
 
         activeKeyCodes = new HashSet<>();

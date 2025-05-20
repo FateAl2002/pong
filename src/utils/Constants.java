@@ -27,13 +27,8 @@ public final class Constants {
     public static final int BALL_HEIGHT = 80;
     public static final int BALL_SPEED = 1;
 
-    public static final String PADDLE1_IMAGE_PATH = "resources/paddle1.png";
-    public static final int PADDLE1_WIDTH = 80;
-    public static final int PADDLE1_HEIGHT = 160;
-    public static final int PADDLE1_SPEED = 1;
-
-    public static final String PADDLE2_IMAGE_PATH = "resources/paddle2.png";
-    public static final int PADDLE2_WIDTH = 80;
-    public static final int PADDLE2_HEIGHT = 160;
-    public static final int PADDLE2_SPEED = 1;
+    public static final String PADDLE_IMAGE_PATH = "resources/paddle1.png";
+    public static final int PADDLE_WIDTH = 80;
+    public static final int PADDLE_HEIGHT = 160;
+    public static final int PADDLE_SPEED = 2;
 }
