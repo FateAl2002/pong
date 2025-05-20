@@ -8,6 +8,8 @@ public class Score {
         return Player2Score;
     }
 
+    public void
+
     public void setPlayer2Score(int player2Score, Object paddle1, Sprite ball) {
         Player2Score = 0;
         if (ball.isColliding((Sprite) paddle1)) {

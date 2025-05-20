@@ -62,7 +62,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
         graphics.setFont(new Font("Arial", Font.PLAIN, 42));
         graphics.setColor(Color.RED);
-        graphics.drawString("Hello world!", 20, 100);
+        graphics.drawString("player 1:" + int Player1Score + "player 2:" + int Player2Score , 20, 100);
     }
 
     @Override
