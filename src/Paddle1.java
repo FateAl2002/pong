@@ -10,7 +10,7 @@ public class Paddle1 extends Sprite {
     private int sKey;
 
     public Paddle1() {
-        super(PADDLE1_IMAGE_PATH, 0, BOARD_HEIGHT / 2 - PADDLE1_HEIGHT / 2, PADDLE1_WIDTH, PADDLE1_HEIGHT);
+        super(PADDLE1_IMAGE_PATH, PADDLE1_WIDTH, BOARD_HEIGHT / 2 - PADDLE1_HEIGHT / 2, PADDLE1_WIDTH, PADDLE1_HEIGHT);
         resetPaddle1();
     }
 

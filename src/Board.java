@@ -59,6 +59,10 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         for(Sprite sprite : sprites) {
             sprite.draw(graphics, this);
         }
+
+        graphics.setFont(new Font("Arial", Font.PLAIN, 42));
+        graphics.setColor(Color.RED);
+        graphics.drawString("Hello world!", 20, 100);
     }
 
     @Override

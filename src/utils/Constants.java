@@ -34,6 +34,6 @@ public final class Constants {
 
     public static final String PADDLE2_IMAGE_PATH = "resources/paddle2.png";
     public static final int PADDLE2_WIDTH = 80;
-    public static final int PADDLE2_HEIGHT = 80;
+    public static final int PADDLE2_HEIGHT = 160;
     public static final int PADDLE2_SPEED = 1;
 }
