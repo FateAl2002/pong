@@ -1,6 +1,7 @@
 import java.awt.*;
 
-import static utils.Constants.BALL_WIDTH;
+import static utils.Constants.*;
+import static utils.Constants.BALL_HEIGHT;
 
 public class Score {
     private int Player1Score;
@@ -28,14 +29,19 @@ public class Score {
             Player2Score++;
             ball.resetBall();
         }
-        updateScore(ball);
     }
 
-    public void displayScore(Graphics g) {
-        g.setFont(new Font("Arial", Font.BOLD, 25));
-        g.setColor(Color.RED);
-        g.drawString("Player 1 Score: " + Player1Score, 0, 30);
-        g.drawString("Player 2 Score: " + Player2Score, 400, 30);
+    public void displayScore(Graphics graphics) {
+        graphics.setFont(new Font("Arial", Font.BOLD, 25));
+        graphics.setColor(Color.RED);
+        graphics.drawString("Player 1 Score: " + Player1Score, 0, 30);
+        graphics.drawString("Player 2 Score: " + Player2Score, 400, 30);
+
+        if (Player1Score == 11) {
+            graphics.drawString("Player 1 won", 320, 240);
+        } else if (Player2Score == 11) {
+            graphics.drawString("Player 2 won", 320, 240);
+        }
     }
 
 }
