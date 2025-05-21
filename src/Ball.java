@@ -15,7 +15,7 @@ public class Ball extends Sprite {
         resetBall();
     }
 
-    private void resetBall() {
+    public void resetBall() {
         pos.x =  BOARD_WIDTH / 2 - BALL_WIDTH / 2;
         pos.y = BOARD_HEIGHT / 2 - BALL_HEIGHT / 2;
 

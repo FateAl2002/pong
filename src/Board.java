@@ -16,6 +16,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
     private final Ball ball;
     private final Paddle paddle1;
     private final Paddle paddle2;
+    private final Score score;
     private final List<Sprite> sprites;
     private final Set<Integer> activeKeyCodes;
 
@@ -26,6 +27,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         ball = new Ball();
         paddle1 = new Paddle(0, KeyEvent.VK_W, KeyEvent.VK_S);
         paddle2 = new Paddle(BOARD_WIDTH - PADDLE_WIDTH, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
+        score = new Score(BOARD_WIDTH);
         sprites = new ArrayList<>(List.of(ball, paddle1, paddle2));
 
         activeKeyCodes = new HashSet<>();
@@ -60,9 +62,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
             sprite.draw(graphics, this);
         }
 
-        graphics.setFont(new Font("Arial", Font.PLAIN, 42));
-        graphics.setColor(Color.RED);
-        graphics.drawString("player 1:" + int Player1Score + "player 2:" + int Player2Score , 20, 100);
+        score.displayScore(graphics);
     }
 
     @Override
