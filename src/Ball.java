@@ -43,8 +43,6 @@ public class Ball extends Sprite {
     public void tick() {
         pos.translate((int)vx, (int)vy);
 
-        pos.x = Math.clamp(pos.x, 0, BOARD_WIDTH - BALL_WIDTH);
-
         if (pos.y <= 0 || pos.y >= BOARD_HEIGHT - BALL_HEIGHT) {
             vy = -vy;
         }

@@ -50,6 +50,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
             ball.bounceLeft();
         }
 
+        score.updateScore(ball);
 
         repaint();
     }
