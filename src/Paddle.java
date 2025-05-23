@@ -7,7 +7,7 @@ public class Paddle extends Sprite {
     private final int downKey;
 
     public Paddle(int xPos, int upKey, int downKey) {
-        super(PADDLE_IMAGE_PATH, xPos, 0, PADDLE_WIDTH, PADDLE_HEIGHT);
+        super(PADDLE_IMAGE_PATH, xPos, 80, PADDLE_WIDTH, PADDLE_HEIGHT);
         this.upKey = upKey;
         this.downKey = downKey;
 
@@ -20,7 +20,7 @@ public class Paddle extends Sprite {
 
     @Override
     public void tick() {
-        pos.y = Math.clamp(pos.y, 0, BOARD_HEIGHT - PADDLE_HEIGHT);
+        pos.y = Math.clamp(pos.y, 80, 560 - PADDLE_HEIGHT);
 
     }
 

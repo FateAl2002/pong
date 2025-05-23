@@ -11,7 +11,7 @@ public class Ball extends Sprite {
     private Random random;
 
     public Ball() {
-        super(BALL_IMAGE_PATH, 0, 0, BALL_WIDTH, BALL_HEIGHT);
+        super(BALL_IMAGE_PATH, 80, 5600, BALL_WIDTH, BALL_HEIGHT);
         resetBall();
     }
 
@@ -43,7 +43,7 @@ public class Ball extends Sprite {
     public void tick() {
         pos.translate((int)vx, (int)vy);
 
-        if (pos.y <= 0 || pos.y >= BOARD_HEIGHT - BALL_HEIGHT) {
+        if (pos.y <= 80 || pos.y >= 560 - BALL_HEIGHT) {
             vy = -vy;
         }
     }
