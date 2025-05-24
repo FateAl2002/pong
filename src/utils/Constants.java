@@ -5,13 +5,11 @@ public final class Constants {
         // prevents instantiation
     }
 
-    // Board constants
     public static final int BOARD_WIDTH = 640;
     public static final int BOARD_HEIGHT = 640;
     // A delay of 25 milliseconds results in a frame rate of 45 FPS.
     public static final int TICK_DELAY = 25;
 
-    // Wall constants
     public static final String WALL_IMAGE_PATH = "resources/wall.png";
     public static final int WALL_WIDTH = 640;
     public static final int WALL_HEIGHT = 80;
