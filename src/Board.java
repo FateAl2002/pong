@@ -55,8 +55,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         }
 
         score.updateScore(ball);
-        wall1.bounceUpOrDown(ball, wall1, wall2);
-        wall2.bounceUpOrDown(ball, wall1, wall2);
+
 
         repaint();
     }
