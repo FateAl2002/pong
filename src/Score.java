@@ -1,10 +1,13 @@
 import java.awt.*;
-
+import javax.swing.Timer;
 import static utils.Constants.*;
 
 public class Score {
     private int player1Score;
     private int player2Score;
+    private boolean showWinMessage = false;
+    private int winner = 0;
+    private Timer resetTimer;
 
     public Score(int boardWidth) {
         player1Score = 0;
@@ -19,12 +22,28 @@ public class Score {
     }
 
     public void updateScore(Ball ball) {
-        if (ball.getPos().x <= -BALL_WIDTH) {
-            player2Score++;
-            ball.resetBall();
-        } else if (ball.getPos().x >= BOARD_WIDTH) {
-            player1Score++;
-            ball.resetBall();
+        if (!showWinMessage) {
+            if (ball.getPos().x <= -BALL_WIDTH) {
+                player1Score++;
+                ball.resetBall();
+            } else if (ball.getPos().x >= BOARD_WIDTH) {
+                player2Score++;
+                ball.resetBall();
+            }
+        }
+
+        if (player1Score == 11 || player2Score == 11) {
+            showWinMessage = true;
+            winner = (player1Score == 11) ? 1 : 2;
+
+            resetTimer = new Timer(60000, e -> {
+                player1Score = 0;
+                player2Score = 0;
+                showWinMessage = false;
+                resetTimer.stop();
+            });
+            resetTimer.setRepeats(false);
+            resetTimer.start();
         }
     }
 
@@ -34,13 +53,8 @@ public class Score {
         graphics.drawString("Player 1 Score: " + player1Score, 0, 30);
         graphics.drawString("Player 2 Score: " + player2Score, 400, 30);
 
-        if (player1Score == 11) {
-            graphics.drawString("Player 1 won", 220, 240);
-            player1Score = 0;
-        } else if (player2Score == 11) {
-            graphics.drawString("Player 2 won", 220, 240);
-            player2Score = 0;
+        if (showWinMessage) {
+            graphics.drawString("Player " + winner + " Won!", 220, 240);
         }
     }
-
 }

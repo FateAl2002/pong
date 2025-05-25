@@ -11,7 +11,7 @@ public class Ball extends Sprite {
     private Random random;
 
     public Ball() {
-        super(BALL_IMAGE_PATH, 80, 5600, BALL_WIDTH, BALL_HEIGHT);
+        super(BALL_IMAGE_PATH, 80, 560, BALL_WIDTH, BALL_HEIGHT);
         resetBall();
     }
 
