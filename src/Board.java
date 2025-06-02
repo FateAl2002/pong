@@ -19,6 +19,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
     private final Wall wall1;
     private final Wall wall2;
     private final Score score;
+    private int rallyCounter;
     private final List<Sprite> sprites;
     private final Set<Integer> activeKeyCodes;
 
@@ -26,6 +27,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
         setBackground(Color.GRAY);
 
+        rallyCounter = 0;
         ball = new Ball();
         paddle1 = new Paddle(0, KeyEvent.VK_W, KeyEvent.VK_S);
         paddle2 = new Paddle(BOARD_WIDTH - PADDLE_WIDTH, KeyEvent.VK_UP, KeyEvent.VK_DOWN);
@@ -54,6 +56,10 @@ public class Board extends JPanel implements ActionListener, KeyListener {
             ball.bounceLeft();
         }
 
+        if (ball.isColliding(paddle1) || ball.isColliding(paddle2) || ball.isColliding(wall1) || ball.isColliding(wall2)) {
+            rallyCounter = rallyCounter + 1;
+        }
+
         score.updateScore(ball);
 
         repaint();
@@ -62,6 +68,10 @@ public class Board extends JPanel implements ActionListener, KeyListener {
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
+
+        graphics.setFont(new Font("Arial", Font.BOLD, 25));
+        graphics.setColor(Color.RED);
+        graphics.drawString("Rally: " + rallyCounter, 250, 100);
 
         for(Sprite sprite : sprites) {
             sprite.draw(graphics, this);

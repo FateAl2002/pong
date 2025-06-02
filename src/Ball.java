@@ -27,13 +27,13 @@ public class Ball extends Sprite {
             vx = BALL_SPEED;
             vy = -BALL_SPEED;
         } else if (randNum == 1) {
-            vx = -BALL_SPEED;
+            vx = BALL_SPEED;
             vy = BALL_SPEED;
         } else if (randNum == 2) {
             vx = -BALL_SPEED;
             vy = BALL_SPEED;
         } else {
-            vx = BALL_SPEED;
+            vx = -BALL_SPEED;
             vy = -BALL_SPEED;
         }
 
