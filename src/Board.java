@@ -25,7 +25,7 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
     public Board() {
         setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
-        setBackground(Color.GRAY);
+        setBackground(Color.LIGHT_GRAY);
 
         rallyCounter = 0;
         ball = new Ball();
@@ -71,12 +71,12 @@ public class Board extends JPanel implements ActionListener, KeyListener {
 
         graphics.setFont(new Font("Arial", Font.BOLD, 25));
         graphics.setColor(Color.RED);
-        graphics.drawString("Rally: " + rallyCounter, 250, 100);
 
         for(Sprite sprite : sprites) {
             sprite.draw(graphics, this);
         }
 
+        graphics.drawString("Rally: " + rallyCounter, 250, 30);
         score.displayScore(graphics);
     }
 
